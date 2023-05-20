@@ -1,22 +1,11 @@
-//your JS code here. If required.
-function timeCount() {
-                var today = new Date();
+function counttime(){
+    let result = setInterval(()=>{
+        let data = new Date();
+        let store = data.toLocaleString();
+      document.getElementById("timer").innerHTML = store;
+    
+    },1000)
 
-                var day = today.getDate();
-                var month = today.getMonth()+1;
-                var year = today.getFullYear();
+}
 
-                var hour = today.getHours();
-                if(hour<10)hour = "0"+hour;
-
-                var minute = today.getMinutes();
-                if(minute<10)minute = "0"+minute;
-
-                var second = today.getSeconds();
-                if(second<10)second = "0"+second;
-
-                document.getElementById("timer").innerHTML = 
-                day+"/"+month+"/"+year+" |"+hour+":"+minute+":"+second;
-
-                setTimeout("timeCount()", 1000);
-        }
+counttime();
